@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace comando
 {
-    static class EnemyFactory
+    class EnemyFactory
     {
-        private static List<Enemy> enemys = new List<Enemy>();
-        public static void AddEnemy(Enemy newEnemy) => enemys.Add(newEnemy);
-        public static List<Enemy> GetAllEnemys() => enemys;
-        public static Enemy CreatEnemy(string name)
+        private List<Enemy> enemys = new List<Enemy>();
+        public void AddEnemy(Enemy newEnemy) => enemys.Add(newEnemy);
+        public List<Enemy> GetAllEnemys() => enemys;
+        public Enemy CreatEnemy(string name)
         {
             Enemy newEnemy = new Enemy(name);
             return newEnemy;

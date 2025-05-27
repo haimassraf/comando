@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace comando
 {
-    internal class ComandorFactory
+    class ComandorFactory
     {
-        static List<Commando> commandors = new List<Commando>();
-        public static void AddCommandor(Commando newCommandor) => commandors.Add(newCommandor);
-        public static List<Commando> GetAllCommandors() => commandors;
-        public static Commando CreatCommandor(string name, string nameCode, Status status, CommandoType commandoType = CommandoType.RegularCommandor)
+        private List<Commando> commandors = new List<Commando>();
+        public void AddCommandor(Commando newCommandor) => commandors.Add(newCommandor);
+        public List<Commando> GetAllCommandors() => commandors;
+        public Commando CreatCommandor(string name, string nameCode, Status status, CommandoType commandoType = CommandoType.RegularCommandor)
         {
             if (commandoType == CommandoType.AirCommando)
             {
