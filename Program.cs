@@ -10,9 +10,9 @@ namespace comando
     {
         static void Main(string[] args)
         {
-            Commando newCommando = new Commando("haim", "245", Commando.Status.Walk);
-            AirCommando airCommando = new AirCommando("haim", "666", Commando.Status.Hide);
-            SeaCommando seaCommando = new SeaCommando("haim", "555", Commando.Status.Attack);
+            Commando newCommando = new Commando("haim", "245", Status.Walk);
+            AirComando airCommando = new AirComando("haim", "666", Status.Hide);
+            SeaCommando seaCommando = new SeaCommando("haim", "555", Status.Attack);
             Commando[] comandosArr = new Commando[] { newCommando, airCommando, seaCommando };
             foreach(Commando solder in comandosArr)
             {

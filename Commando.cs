@@ -13,11 +13,6 @@ namespace comando
         protected Tools[] ComanderTools;
         protected Status status;
 
-        public enum Tools
-        { hammer, chisel, rope, bag, watery }
-
-        public enum Status
-        { Walk, Hide, Attack }
 
         public string GetName() => this.Name;
         public string GetCodeName() => this.CodeName;
@@ -61,6 +56,7 @@ namespace comando
             this.CodeName = nameCode;
             this.status = status;
             this.ComanderTools = new Tools[] { Tools.hammer, Tools.bag, Tools.rope, Tools.chisel, Tools.watery };
+            ComandorFactory.AddCommandor(this);
         }
     }
 }

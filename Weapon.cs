@@ -30,6 +30,7 @@ namespace comando
             this.name = name;
             this.manufacturer = manufacturer;
             this.numberOfBulits = numberOfBulits;
+            WeaponFactory.AddWeapon(this);
         }
     }
 }

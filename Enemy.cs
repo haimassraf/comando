@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace comando
 {
-    internal class SingleResponsibillty
+    internal class Enemy
     {
         private string name;
         private int life;
@@ -14,11 +14,12 @@ namespace comando
 
         public void Yell() => Console.WriteLine("Im enemy!");
 
-        public SingleResponsibillty(string name)
+        public Enemy(string name)
         {
             this.name = name;
             this.life = 100;
             this.isAlive = true;
+            EnemyFactory.AddEnemy(this);
         }
     }
 }

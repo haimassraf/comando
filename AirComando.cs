@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace comando
 {
-    class AirCommando : Commando
+    class AirComando : Commando
     {
-        public AirCommando(string name, string nameCode, Status status) : base(name, nameCode, status) { }
+        public AirComando(string name, string nameCode, Status status) : base(name, nameCode, status) { }
 
         public void parachuting() => Console.WriteLine("The commandor know parachuting.");
         public override void Attack() => Console.WriteLine($"Air solder with code name {this.CodeName} now attacking.");
