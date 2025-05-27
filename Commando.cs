@@ -6,65 +6,61 @@ using System.Threading.Tasks;
 
 namespace comando
 {
-    internal class Commando
+    class Commando
     {
-        private string name { get; set; }
-        private string nameCode;
-        private string[] tools = new string[5];
-        private Status status;
+        protected string Name;
+        protected string CodeName;
+        protected Tools[] ComanderTools;
+        protected Status status;
+
+        public enum Tools
+        { hammer, chisel, rope, bag, watery }
 
         public enum Status
-        {
-            Walk,
-            Hide,
-            Attack
-        }
+        { Walk, Hide, Attack }
+
+        public string GetName() => this.Name;
+        public string GetCodeName() => this.CodeName;
+        public string SetCodeName(string newCodeName) => this.CodeName = newCodeName;
 
         public void Walk()
         {
-            if (this.status != Status.Walk)
-            {
-                this.status = Status.Walk;
-                Console.WriteLine($"Solder with code name {this.nameCode} now {this.status}.");
-            }
-            else
-            {
-                Console.WriteLine($"Solder with code name {this.nameCode} already {this.status}.");
-            }
+            this.status = Status.Walk;
+            Console.WriteLine($"Solder with code name {this.CodeName} now {this.status}.");
         }
 
         public void Hide()
         {
-            if (this.status != Status.Hide)
-            {
-                this.status = Status.Hide;
-                Console.WriteLine($"Solder with code name {this.nameCode} now {this.status}.");
-            }
-            else
-            {
-                Console.WriteLine($"Solder with code name {this.nameCode} already {this.status}.");
-            }
+            this.status = Status.Hide;
+            Console.WriteLine($"Solder with code name {this.CodeName} now {this.status}.");
         }
 
-        public void Attack()
+        public virtual void Attack()
         {
-            if (this.status != Status.Attack)
+            this.status = Status.Attack;
+            Console.WriteLine($"Commander with code name {this.CodeName} now Attacking.");
+        }
+
+        public string SayName(string commanderRank)
+        {
+            if (commanderRank.ToUpper() == "GENERAL")
             {
-                this.status = Status.Attack;
-                Console.WriteLine($"Solder with code name {this.nameCode} now {this.status}.");
+                return this.Name;
             }
-            else
+            if (commanderRank.ToUpper() == "COLONEL")
             {
-                Console.WriteLine($"Solder with code name {this.nameCode} already {this.status}.");
+                return this.CodeName;
             }
+            Console.WriteLine("You can`t get the information.");
+            return null;
         }
 
         public Commando(string name, string nameCode, Status status)
         {
-            this.name = name;
-            this.nameCode = nameCode;
+            this.Name = name;
+            this.CodeName = nameCode;
             this.status = status;
-            this.tools = new string[] { "Tools", "hammer", "chisel", "rope", "bag", "watery" };
+            this.ComanderTools = new Tools[] { Tools.hammer, Tools.bag, Tools.rope, Tools.chisel, Tools.watery };
         }
     }
 }

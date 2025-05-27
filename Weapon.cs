@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace comando
 {
-    internal class Weapon
+    class Weapon
     {
         private string name;
         private string manufacturer;
