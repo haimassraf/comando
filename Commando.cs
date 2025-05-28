@@ -21,19 +21,19 @@ namespace comando
         public void Walk()
         {
             this.status = Status.Walk;
-            Console.WriteLine($"Solder with code name {this.CodeName} now {this.status}.");
+            Console.WriteLine($"Commando with code name {this.CodeName} now {this.status}.");
         }
 
         public void Hide()
         {
             this.status = Status.Hide;
-            Console.WriteLine($"Solder with code name {this.CodeName} now {this.status}.");
+            Console.WriteLine($"Commando with code name {this.CodeName} now {this.status}.");
         }
 
         public virtual void Attack()
         {
             this.status = Status.Attack;
-            Console.WriteLine($"Commander with code name {this.CodeName} now Attacking.");
+            Console.WriteLine($"Commando with code name {this.CodeName} now Attacking.");
         }
 
         public string SayName(string commanderRank)
@@ -50,13 +50,12 @@ namespace comando
             return null;
         }
 
-        public Commando(string name, string nameCode, Status status)
+        public Commando(string name, string nameCode)
         {
             this.Name = name;
             this.CodeName = nameCode;
-            this.status = status;
+            this.status = Status.Standing;
             this.ComanderTools = new Tools[] { Tools.hammer, Tools.bag, Tools.rope, Tools.chisel, Tools.watery };
-            ComandorFactory.AddCommandor(this);
         }
     }
 }

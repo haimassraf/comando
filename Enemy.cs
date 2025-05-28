@@ -19,7 +19,6 @@ namespace comando
             this.name = name;
             this.life = 100;
             this.isAlive = true;
-            EnemyFactory.AddEnemy(this);
         }
     }
 }

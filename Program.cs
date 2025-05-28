@@ -10,16 +10,19 @@ namespace comando
     {
         static void Main(string[] args)
         {
-            Commando newCommando = new Commando("haim", "245", Status.Walk);
-            AirComando airCommando = new AirComando("haim", "666", Status.Hide);
-            SeaCommando seaCommando = new SeaCommando("haim", "555", Status.Attack);
-            Commando[] comandosArr = new Commando[] { newCommando, airCommando, seaCommando };
-            foreach(Commando solder in comandosArr)
+            Game game1 = new Game();
+            SeaCommando newSeaComando = (SeaCommando)game1.CreateComandor("haim", "sea king", CommandoType.SeaCommando);
+            AirCommando newAirCommando = (AirCommando)game1.CreateComandor("haim", "air king", CommandoType.AirCommando);
+            Weapon newWeapon = game1.CreateWeapon("ak47", "kalatchnikov", 5);
+            Enemy newEnemy = game1.CreateEnemy("blah blag");
+            newSeaComando.Attack();
+            newSeaComando.Sweaming();
+            newAirCommando.parachuting();
+            newEnemy.Yell();
+            for (int i = 0; i < 7; i++)
             {
-                solder.Attack();
+                newWeapon.Shoot();
             }
-
-            Weapon newWeapon = new Weapon("ak47", "israel", 3);
         }
     }
 }

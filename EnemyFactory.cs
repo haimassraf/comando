@@ -14,6 +14,7 @@ namespace comando
         public Enemy CreatEnemy(string name)
         {
             Enemy newEnemy = new Enemy(name);
+            AddEnemy(newEnemy);
             return newEnemy;
         }
     }

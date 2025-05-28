@@ -14,6 +14,7 @@ namespace comando
         public Weapon CreatWeapon(string name, string manufacturer, int numberOfBulits)
         {
             Weapon newWeapon = new Weapon(name, manufacturer, numberOfBulits);
+            AddWeapon(newWeapon);
             return newWeapon;
         }
     }

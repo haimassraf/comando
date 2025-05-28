@@ -10,7 +10,7 @@ namespace comando
     { hammer, chisel, rope, bag, watery }
 
     public enum Status
-    { Walk, Hide, Attack }
+    { Walk, Hide, Attack, Standing }
 
     public enum CommandoType
     { AirCommando, SeaCommando, RegularCommandor}
